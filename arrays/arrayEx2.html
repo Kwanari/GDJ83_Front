@@ -18,15 +18,12 @@
 
         const im = document.getElementById("im");
         function next () {
-
-            i=i*1+1
-            im.src="/images/"+ar[i];
-
             if(i==4){
                 alert("이미지가 끝났습니다.")
                 i=0
-        }
-
+            }
+            im.src="/images/"+ar[i];
+            i=i+1
         }
         
 
