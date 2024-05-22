@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <img src="/images/KHK1.JPG" id="im">;
+    </div>
+
+    <button onclick="next()"> Next </button>
+
+    <script>
+        let ar = ["KHK1.JPG", "KHK2.JPG", "KHK3.JPG", "KHK4.JPG"];
+        let i=0;
+
+        const im = document.getElementById("im");
+        function next () {
+
+            i=i*1+1
+            im.src="/images/"+ar[i];
+
+            if(i==4){
+                alert("이미지가 끝났습니다.")
+                i=0
+        }
+
+        }
+        
+
+
+    </script>
+
+</body>
+</html>
