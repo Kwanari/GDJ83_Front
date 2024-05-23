@@ -6,27 +6,50 @@
     <title>Document</title>
 </head>
 <body>
-    <input onclick="change()" type="checkbox" name="ch" class="c" id="checkALL"> //전체동의, 전체선택
+    <!--체크박스 전체에 이벤트 적용-->
+
+    <input onclick="change()" type="checkbox" name="ch" id="checkALL">   <!--전체동의, 전체선택-->
+    <input type="checkbox" name="ch" class="c">
     <input type="checkbox" name="ch" class="c">
     <input type="checkbox" name="ch" class="c">
     <input type="checkbox" name="ch" class="c">
 
-    <button onclick="change()">CLICK</button>
+
+    <!-- <button onclick="change()">CLICK</button> -->
 
     <script>
 
-        const a = document.getElementsByClassName("c");
+        const c = document.getElementsByClassName("c");
         const ch = document.getElementById("checkALL");
 
+        for (let i=0;i<c.length;i++){                           
+            c[i].addEventListener("click", function (){
+                let flag = true
+                for (let j=0;j<c.length;j++){
+                    
+                    if (!c[j].checked){
+                        flag=false 
+                        break
+                    }
+                    
+                }
+
+                ch.checked=flag
+            })
+        }   
+
+
+
         function change () {
-            console.log(a[0].checked);
+                for (let i=0;i<c.length;i++){
+                    c[i].checked=ch.checked
+                }
         }
 
 
-        function change () {
-                for (let i=0;i<a.length;i++){
-                    a[i].checked=ch.checked
-                }
+
+
+
 
 
             // if(ch.checked){ //ch.checked 자체가 boolean, 조건문 타입
@@ -38,7 +61,7 @@
             //         a[i].checked=ch.checked
             //     }
             // }
-        }
+
 
 
 
