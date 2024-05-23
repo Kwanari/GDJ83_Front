@@ -44,16 +44,33 @@
         })
 
         btn2.addEventListener ("click", function(){
+
             //<div> </div>
             let d = document.createElement("div")
+
             //<input> </input>
             let i = document.createElement("input")
-            //<div> <input> </input> </div>
+            
+            //<span> </span>
+            let s = document.createElement("span")
+
+
+            //<div> <input> </input> <span> </span> </div>
             d.appendChild(i)
-            //input태그에 type 속성 생성
+            d.appendChild(s)
+
+            // x변수에 x 텍스트 추가
+            let x = document.createTextNode("X")
+
+            // span태그에 x추가
+            s.append(x)
+
+            // a변수에 type 속성 대입
             let a = document.createAttribute("Type")
+
             //type속성에 file 값
             a.value="file"
+
             //input태그에 type=file 
             i.setAttributeNode(a)
 
