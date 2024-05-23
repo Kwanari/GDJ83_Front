@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="checkbox" name="ch" class="c" id="checkALL">
+    <input onclick="change()" type="checkbox" name="ch" class="c" id="checkALL"> //전체동의, 전체선택
     <input type="checkbox" name="ch" class="c">
     <input type="checkbox" name="ch" class="c">
     <input type="checkbox" name="ch" class="c">
@@ -22,33 +22,24 @@
             console.log(a[0].checked);
         }
 
+
         function change () {
-            for (let i=0;i<a.lenght;i++){
-                if(a[0].checked==true){
-                    a[i].checked=true
-                } else {
-                    a[i].checked=false
+                for (let i=0;i<a.length;i++){
+                    a[i].checked=ch.checked
                 }
-            }
+
+
+            // if(ch.checked){ //ch.checked 자체가 boolean, 조건문 타입
+            //     for (let i=0;i<a.length;i++){
+            //         a[i].checked=ch.checked
+            //     }
+            // } else {
+            //     for (let i=0;i<a.length;i++){
+            //         a[i].checked=ch.checked
+            //     }
+            // }
         }
 
-
-        // function change () {
-        //     if(ch.checked==true){
-        //         for (let i=0;i<a.length;i++){
-        //             a[i].checked=true
-        //         }
-        //     } else {
-        //         for (let i=0;i<a.length;i++){
-        //             a[i].checked=false
-        //         }
-        //     }
-        // }
-
-        
-
-        //         console.log(a[i].checked)
-        // a[1].checked = false;
 
 
     </script>
