@@ -4,45 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        div {
+            text-decoration: line-through
+        }
+    </style>
 </head>
 <body>
     <div id="d">
 
     </div>
 
-
     <script>
 
+        const ar = ["바나나", "사과", "딸기", "수박", "참외"];
+        const d = document.getElementById("d")
 
 
-
-        for (let j=0;j<5;j++){
-            const ar = ["바나나", "사과", "딸기", "수박", "참외"];
-            const d = document.getElementById("d")
-            
-            let a = document.createTextNode(ar[j])
+        for (let j=0;j<ar.length;j++){
             let v = document.createElement("div")
             let i = document.createElement("input")
 
-            d.appendChild(v)
-
+            // a변수에 ar[j] 배열의 문자열 입력
+            let a = document.createTextNode(ar[j])
+            
+            // 변수 t에 input태그의 Type 속성 입력
             let t = document.createAttribute("Type")
+
+            // Type 속성 변수 t에 checkbox 값 입력
             t.value = "checkbox"
 
+            // input 태그의 변수 i에 속성변수 t 입력
             i.setAttributeNode(t)
 
+            // div 내에 input, ar배열 입력
             v.appendChild(i)
+            v.append(a)
 
-            
-            v.appendChild(a)
-
-            d.append(v)
+            // body div에 자식 div 입력
+            d.appendChild(v)
         }
 
 
-
-
-        
 
     </script>
 </body>
