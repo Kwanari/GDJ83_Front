@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .c1 {
+            border: red solid 2px;
+            background-color: gainsboro;
+        }
+
+    </style>
+</head>
+<body> 
+    <!-- 각 input 태그에 값이 없으면 click버튼을 눌렀을 때 테두리의 색상을 바꾼다. -->
+    
+
+    <div>
+        <input type="text" class="t">
+    </div>
+    <div>
+        <input type="text" class="t">
+    </div>
+    <div>
+        <input type="text" class="t">
+    </div>
+    <div>
+        <input type="text" class="t">
+    </div>
+    <div>
+        <button onclick="chg ()">CLICK</button>
+    </div>
+
+    <script>
+        const t = document.getElementsByClassName("t");
+
+        function chg () {
+            for (let i=0;i<t.length;i++) {
+                if (t[i].value==""){ //값이 비어있음
+                    t[i].classList.toggle("c1");
+                } else {
+                    t[i].classList.remove("c1");
+                }
+            }
+        }
+
+    </script>
+    
+
+
+</body>
+</html>
