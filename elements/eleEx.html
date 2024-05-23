@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="d">
+
+    </div>
+
+
+    <script>
+
+
+
+
+        for (let j=0;j<5;j++){
+            const ar = ["바나나", "사과", "딸기", "수박", "참외"];
+            const d = document.getElementById("d")
+            
+            let a = document.createTextNode(ar[j])
+            let v = document.createElement("div")
+            let i = document.createElement("input")
+
+            d.appendChild(v)
+
+            let t = document.createAttribute("Type")
+            t.value = "checkbox"
+
+            i.setAttributeNode(t)
+
+            v.appendChild(i)
+
+            
+            v.appendChild(a)
+
+            d.append(v)
+        }
+
+
+
+
+        
+
+    </script>
+</body>
+</html>
