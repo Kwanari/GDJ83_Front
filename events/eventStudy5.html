@@ -32,10 +32,12 @@
         //test
         const b = document.getElementById("b");
 
-        result.addEventListener("click", function(e){ //버블링 
-            console.log("e")
-            // e.target: button
-            if(e.target.classList.contains("btns")){
+        result.addEventListener("click", function(e){ //버블링, click으로 발생한 이벤트를 e에 넣는다.
+            // console.log(e)
+            // e.target: button element = document.getElement의 결과물과 같다.
+
+
+            if(e.target.classList.contains("btns")){ //result 박스 안에서 target(이벤트가 발생한 객체를 나타냄)속성이 class btns를 포함하고있는 경우 함수 go를 실행
                 go();
             }
         })
@@ -51,7 +53,7 @@
             result.append(b)
         })
 
-        for (let i=0;0<btns.length;i++){
+        for (let i=0;i<btns.length;i++){
             btns[i].addEventListener("click", function(){
                 go();
             })
