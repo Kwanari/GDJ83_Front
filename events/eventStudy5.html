@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            border: 1px solid red;
+            }
+    </style>
+</head>
+<body>
+    
+    <button class="btns">click1</button>
+    <button class="btns">click2</button>
+
+    <div id="result">   
+    </div>
+
+    <button id="add">add</button>
+
+
+    <script>
+        const btns = document.getElementsByClassName("btns");
+        const add = document.getElementById("add");
+        const result = document.getElementById("result");
+
+        //test
+        const b = document.getElementById("b");
+
+        result.addEventListener("click", function(e){ //버블링 
+            console.log("e")
+            // e.target: button
+            if(e.target.classList.contains("btns")){
+                go();
+            }
+        })
+
+        // b.addEventListener("click", function(){ //버블링 자식먼저 실행
+        //     console.log("button")
+        // })
+
+        add.addEventListener("click", function(){
+            let b = document.createElement("button")
+            b.append("click")
+            b.className="btns";
+            result.append(b)
+        })
+
+        for (let i=0;0<btns.length;i++){
+            btns[i].addEventListener("click", function(){
+                go();
+            })
+        }
+
+        function go() {
+            console.log ("같은일을하자")
+        }
+    </script>
+
+</body>
+</html>
