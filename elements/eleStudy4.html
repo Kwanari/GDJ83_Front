@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="c1" id="result1">
+        <h3>1</h3>
+        <button class="btn1" id="1" data-del-num="1">CLICK1</button> <!-- data-... 없는 속성을 임의로 생성-->
+    </div>
+    <div class="c1" id="result2">
+        <h3>2</h3>
+        <button class="btn1" id="2" data-del-num="2">CLICK2</button>
+    </div>
+    <div class="c1" id="result3">
+        <h3>3</h3>
+        <button class="btn1" id="3" data-del-num="3">CLICK3</button>
+    </div>
+    <div class="c1" id="result4">
+        <h3>4</h3>
+        <button class="btn1" id="4" data-del-num="4">CLICK4</button>
+    </div>
+
+    
+    <script>
+        const c1 = document.getElementsByClassName("c1");
+        const btn1 = document.getElementsByClassName("btn1");
+
+
+
+        for (let i=0;i<c1.length;i++){
+            btn1[i].addEventListener("click", function(){
+
+                // console.log (this.data-del-num) 변수명.속성명 사용 불가
+                console.log(this.getAttribute("data-del-num"))
+
+                // let k = this.parentNode  //.parentNode 자식 기준으로 부모찾기
+                // k.remove()
+
+                c1[i].remove()
+                console.log ("div :", c1.length)
+                console.log ("button :", btn1.length)
+                console.log ("index :", i)
+
+                document.getElementById("result"+this.getAttribute("data-del-num")).remove()
+            })
+        }
+        
+        
+
+    </script>
+
+</body>
+</html>

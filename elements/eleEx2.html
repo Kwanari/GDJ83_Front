@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <input type="checkbox" id="allCheck"> <!--전체선택-->
+        <button id="del"> DELETE </button>
+    </div>
+    
+    <div class="d" id="1" >
+        <input type="checkbox" class="c1" data-del-num="1">
+        <span>mail title1</span>
+    </div>
+    <div class="d" id="2" >
+        <input type="checkbox" class="c1" data-del-num="2">
+        <span>mail title2</span>
+    </div>
+    <div class="d" id="3" >
+        <input type="checkbox" class="c1" data-del-num="3">
+        <span>mail title3</span>
+    </div>
+    <div class="d" id="4" >
+        <input type="checkbox" class="c1" data-del-num="4">
+        <span>mail title4</span>
+    </div>
+    <div class="d" id="5" >
+        <input type="checkbox" class="c1" data-del-num="5">
+        <span>mail title5</span>
+    </div>
+    <div class="d" id="6" >
+        <input type="checkbox" class="c1" data-del-num="6">
+        <span>mail title6</span>
+    </div>
+
+    <script>
+        const allCheck = document.getElementById("allCheck");
+        const c1 = document.getElementsByClassName("c1");
+        const del = document.getElementById("del");
+        const d = document.getElementsByClassName("d");
+
+        for (let i=0;i<c1.length;i++){
+            let flag = true;
+
+            c1[i].addEventListener("click", function(){
+                for (let j=0;j<c1.length;j++) {
+                    if (!c1[j].checked){
+                        flag = false;
+                        break
+                    }
+                }      
+                allCheck.checked = flag;          
+            })
+        }
+
+        // for (let i=0;i<c1.length;i++){
+        //     allCheck.addEventListener("click", fucntion(){
+        //         if (){
+        //         c1[i].checked=allCheck.checked
+        //         }
+        //     })
+        // }
+
+        
+
+        del.addEventListener("click", function(){
+
+            let ar = [];
+
+            for (let i=0;i<c1.length;i++){
+                if(c1[i].checked){
+                    //document.getElementById(c1[i].getAttribute("data-del-num")).remove()
+                ar.push(c1[i].getAttribute("data-del-num"));
+
+                }
+            }
+
+            for (let i=0;i<ar.length;i++){
+                document.getElementById(ar[i]).remove()
+            }
+
+            // if(c1[1].checked){
+            //     d[1].remove()
+            // }
+
+        })
+
+
+    </script>
+
+    
+    
+
+</body>
+</html>
