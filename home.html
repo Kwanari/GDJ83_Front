@@ -6,11 +6,9 @@
     <title>Document</title>
 
     <style>
-        .l {
+        .li {
             text-decoration: line-through
         }
-
-
     </style>
 
 
@@ -20,26 +18,96 @@
 
     <div>
         <!-- 할일 적고 버튼 클릭하면 등록-->
-        <input type="text">
-        <button>Add</button>
+        <input type="text" id="t">
+        <button id="add">Add</button>
     </div>
 
 
-    <div>
+    <div id="d1">
         <!-- 버튼 누르면 체크된것들 삭제 -->
         <div>
-            <button>휴지통</button>
+            <button id="btn">휴지통</button>
         </div>
 
-        <!-- 체크박스에 체크하면 선 생김 -->
+        <!-- 체크박스에 체크하면 선 생김  -->
         <!-- 체크 빼면 선 없어짐 -->
-        <div>
-            <input type="checkbox">
-            <span>게임하기</span>
-        </div>
     </div>
 
+    <script>
+        const t = document.getElementById("t");
+        const add = document.getElementById("add");
+        const d1 = document.getElementById("d1");     
+        const btn = document.getElementById("btn");
+        const c1 = document.getElementById("c1");
+        const s = document.getElementById("s");
 
+
+
+        console.log
+
+        
+        add.addEventListener("click", function(){
+            let d2 = document.createElement("div")
+            let i = document.createElement("input")
+            i.type="checkbox"
+            i.classList.add("c1")
+            let v = document.createTextNode(t.value)
+            let s = document.createElement("span")
+            s.classList.add("s1")
+            s.appendChild(v)
+            d2.appendChild(i)
+            d2.appendChild(s)
+            d1.append(d2)
+        })
+
+        d1.addEventListener("click", function(e){
+            let ar=[];
+
+            if(e.target.classList.contains("c1").checked){
+                e.target.classList.contains("s1").classList.add("li")
+            }
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // let ar = [];
+
+        // btn.addEventListener("click", function(){
+        //     for(let i=0;i<ar.length;i++){                휴지통
+        //         if(c1[i].checked){
+        //             ar.push(c1[i].getAttribute(""))
+        //         }
+        //     }
+        // })
+
+
+
+
+
+        
+
+    </script>
 
 </body>
 </html>
