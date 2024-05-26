@@ -46,8 +46,9 @@
         console.log
 
         
-        add.addEventListener("click", function(){
+        add.addEventListener("click", function(){ // 할일 추가
             let d2 = document.createElement("div")
+            d2.classList.add("d2")
             let i = document.createElement("input")
             i.type="checkbox"
             i.classList.add("c1")
@@ -60,46 +61,46 @@
             d1.append(d2)
         })
 
-        d1.addEventListener("click", function(e){
-            let ar=[];
+        d1.addEventListener("click", function(){ // 체크박스, 선
 
-            if(e.target.classList.contains("c1").checked){
-                e.target.classList.contains("s1").classList.add("li")
+            let ar = document.getElementsByClassName("c1")
+            let ar1 = document.getElementsByClassName("s1")
+
+            for(let i=0;i<ar.length;i++){
+                if(ar[i].checked){
+                    ar1[i].classList.add("li")
+                } else {
+                    ar1[i].classList.remove("li")
+                }
             }
         })
 
+        btn.addEventListener("click", function(e){
+            let ar = document.getElementsByClassName("c1")
+            let ar2 = document.getElementsByClassName("d2")
+
+            for(let i=0;i<ar.length;i++){
+                if(ar[i].checked){
+                    let del = document.createAttribute("data-del-num")
+                    let iden = document.createAttribute("id")
+                    del.value=i
+                    iden.value=i
+                    ar[i].setAttributeNode(del)
+                    ar2[i].setAttributeNode(iden)
+                }
+            }
+            for(let i=0;i<ar.length;i++){
+                if(ar[i].checked){
+                    
+                }
+            }
+
+            
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // let ar = [];
-
-        // btn.addEventListener("click", function(){
-        //     for(let i=0;i<ar.length;i++){                휴지통
-        //         if(c1[i].checked){
-        //             ar.push(c1[i].getAttribute(""))
-        //         }
-        //     }
-        // })
+           
+        })
 
 
 
