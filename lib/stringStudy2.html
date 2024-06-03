@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="file" id="file">
+    <button id="btn">CLICK</button>
+
+
+<script>
+
+    const file = document.getElementById("file");
+    const btn = document.getElementById("btn");
+    
+    btn.addEventListener("click", function(){    
+        let dot = file.value.indexOf(".");
+        
+        if(file.value.substring(dot+1)=="JPG"){
+            console.log("이미지 파일")
+        } else {
+            console.log("이미지 X")
+        }
+
+    })
+
+
+
+</script>
+
+</body>
+</html>
