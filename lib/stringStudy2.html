@@ -7,19 +7,32 @@
 </head>
 <body>
     
-    <input type="file" id="file">
+    <input type="file" class="file">
+    <input type="file" class="file">
+    <input type="file" class="file">
     <button id="btn">CLICK</button>
 
 
 <script>
 
-    const file = document.getElementById("file");
+    const file = document.getElementsByClassName("file");
     const btn = document.getElementById("btn");
-    
-    btn.addEventListener("click", function(){    
-        let dot = file.value.indexOf(".");
+
+    btn.addEventListener("click", function(){ 
         
-        if(file.value.substring(dot+1)=="JPG"){
+    let flag=true;
+        
+        for(let i=0;i<file.length;i++){
+            let j =file[i].value.indexOf(".")+1
+            if (file[i].value.substring(j)=="JPG"){
+                flag=true;
+            } else {
+                flag=false;
+                break;
+            }
+        }
+
+        if(flag){
             console.log("이미지 파일")
         } else {
             console.log("이미지 X")
