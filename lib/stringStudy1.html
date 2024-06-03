@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="t1">
+    
+
+    <button id="btn">CLICK</button>
+    <div id="result">
+        <!-- 총금액 -->
+        
+
+    </div>
+
+    <script>
+        //입력 후 버튼 클릭 > 글자당 1000원씩 출금
+        
+        const t1 = document.getElementById("t1")
+        const btn = document.getElementById("btn")
+        const result = document.getElementById("result")
+        
+        btn.addEventListener("click", function(){
+            let price = t1.value.length*1000
+            let h1 = document.createElement("h1")
+            h1.append(price)
+ 
+            result.append(h1)
+        })
+
+        
+
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>
